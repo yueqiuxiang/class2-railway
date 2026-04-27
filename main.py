@@ -50,5 +50,7 @@ async def chat(user_input: str = Form(...)):
 # 启动配置（Railway 必须这样写！）
 if __name__ == "__main__":
     import uvicorn
+    import os
+    # 从环境变量读取端口，Railway 会自动分配
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run(app, host="0.0.0.0", port=port)
